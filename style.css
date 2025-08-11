@@ -131,6 +131,28 @@ body {
     }
 }
 
+/* Mobile-First Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -1828,4 +1850,284 @@ body.modal-open {
 
 .achievement-item .gallery-overlay {
     background: linear-gradient(transparent, rgba(245, 158, 11, 0.9));
+}
+/* Enhanced Mobile Responsive Fixes */
+@media (max-width: 770px) {
+    /* Prevent horizontal overflow */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+    
+    .container {
+        padding: 0 var(--space-4);
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Hero Section Mobile Fix */
+    .hero {
+        min-height: 100vh;
+        padding: 0;
+    }
+    
+    .hero-content {
+        padding: var(--space-12) 0;
+        width: 100%;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        margin: var(--space-12) 0;
+    }
+    
+    .hero-stat {
+        padding: var(--space-6);
+        margin: 0 var(--space-2);
+    }
+    
+    /* Typography Mobile Scaling */
+    .title-main {
+        font-size: clamp(2rem, 12vw, 4rem) !important;
+        line-height: 1.1;
+    }
+    
+    .title-sub {
+        font-size: clamp(1rem, 6vw, 1.5rem) !important;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        padding: 0 var(--space-2);
+    }
+    
+    /* Section Headers */
+    .section-header h2 {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+        line-height: 1.2;
+    }
+    
+    .section-header {
+        margin-bottom: var(--space-12);
+        padding: 0 var(--space-2);
+    }
+    
+    /* Gallery and Achievement Grids */
+    .gallery-grid,
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        margin: 0;
+        padding: 0;
+    }
+    
+    .gallery-item {
+        margin: 0 var(--space-2);
+        width: calc(100% - var(--space-4));
+    }
+    
+    .gallery-image {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .feature-card {
+        margin: 0 var(--space-2);
+        width: calc(100% - var(--space-4));
+    }
+    
+    /* About Grid */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .about-card {
+        margin: 0 var(--space-2);
+        width: calc(100% - var(--space-4));
+    }
+    
+    /* Impact Grid */
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
+    .impact-card {
+        padding: var(--space-6);
+        margin: 0 var(--space-1);
+    }
+    
+    /* RTO Section */
+    .rto-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+        padding: 0 var(--space-2);
+    }
+    
+    .rto-image {
+        max-width: calc(100% - var(--space-4));
+        margin: 0 var(--space-2);
+    }
+    
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+    
+    .contact-form-wrapper {
+        margin: 0 var(--space-2);
+    }
+    
+    .form {
+        padding: var(--space-6);
+        width: calc(100% - var(--space-4));
+    }
+    
+    /* Navigation Mobile */
+    .nav-container {
+        padding: var(--space-4) 0;
+    }
+    
+    .nav-menu {
+        padding: var(--space-4);
+    }
+    
+    /* Buttons Mobile */
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: center;
+        padding: 0 var(--space-4);
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: var(--space-4) var(--space-6);
+    }
+    
+    /* Footer Mobile */
+    .footer-brand {
+        padding: 0 var(--space-4);
+    }
+    
+    .social-links {
+        gap: var(--space-3);
+        padding: 0 var(--space-2);
+    }
+    
+    .footer-bottom p {
+        padding: 0 var(--space-4);
+        text-align: center;
+    }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-3);
+    }
+    
+    .hero-content {
+        padding: var(--space-8) 0;
+    }
+    
+    .hero-stat {
+        padding: var(--space-4);
+        margin: 0 var(--space-1);
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .gallery-item,
+    .feature-card,
+    .about-card {
+        margin: 0 var(--space-1);
+        width: calc(100% - var(--space-2));
+    }
+    
+    .form {
+        padding: var(--space-4);
+        margin: 0 var(--space-1);
+        width: calc(100% - var(--space-2));
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+        padding: 0 var(--space-4);
+    }
+    
+    .social-link {
+        min-width: 160px;
+        justify-content: center;
+    }
+}
+
+/* Prevent horizontal scrolling */
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for very wide content */
+.hero-stats,
+.gallery-grid,
+.achievements-grid,
+.features-grid,
+.about-grid,
+.impact-grid {
+    width: 100%;
+    max-width: 100%;
+}
+/* Mobile Modal Fixes */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: var(--space-3);
+    }
+    
+    .modal-image-container {
+        max-width: 90vw;
+        max-height: 60vh;
+    }
+    
+    .modal-info {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin-top: var(--space-4);
+        transform: none;
+    }
+    
+    .modal-navigation {
+        position: absolute;
+        top: 40%;
+        left: var(--space-2);
+        right: var(--space-2);
+    }
 }
